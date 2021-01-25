@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+body {
+  background-image: linear-gradient(180deg, rgba(80, 80, 80, .5) 60%, rgba(0, 0, 0, .5)), url("./assets/dark-honeycomb.png");
+  user-select: none;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#app {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#calculator {
+  width: 360px;
+  background-color: beige;
+  padding: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#controlBoard {
+  background: url("./assets/repeated-square.png") repeat scroll 0 0;
+  height: 8rem;
+  width: 100%;
+}
+
+#formulaContainer {
+  position: relative;
+  overflow: hidden;
+  height: 2.5rem;
+}
+
+#formula {
+  position: absolute;
+  right: 0;
+  font-size: 2rem;
+}
+
+#displayContainer {
+  position: relative;
+  overflow: hidden;
+  height: 5.5rem;
+}
+
+#display {
+  position: absolute;
+  right: 0;
+  font-size: 4.5rem;
+}
+
+#controls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calc-button {
+  font-size: 2rem;
+  border: 1px solid gray;
+  border-radius: 0;
+  padding: 8px;
+}
+
+#clear {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: hotpink;
+}
+
+#zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#equals {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  background-color: aqua;
+}
+
+#add,
+#subtract,
+#multiply,
+#divide {
+  background-color: lavender;
+}
+
+.calc-button:active,
+#equals:active,
+#clear:active,
+#add:active,
+#subtract:active,
+#multiply:active,
+#divide:active {
+  background-color: darkgray;
 }
